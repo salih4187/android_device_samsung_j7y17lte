@@ -24,15 +24,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml
 
-# Custom mixer_paths
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/audio/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml \
-    $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
-
-# Bootanimation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl.7870 \
@@ -41,6 +32,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/bluetooth/bt_vendor.conf:vendor/etc/bluetooth/bt_vendor.conf
+
+# Bootanimation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
+# Custom mixer_paths
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/audio/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml \
+    $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Fingerprint
 PRODUCT_PACKAGES += \
